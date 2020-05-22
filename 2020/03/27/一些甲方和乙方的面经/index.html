@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content>
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content>
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>一些甲方和乙方的面经 · 菠萝吹雪&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">菠萝吹雪&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">一些甲方和乙方的面经</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">菠萝吹雪's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/1.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            一些甲方和乙方的面经
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.8k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/27</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="临近春招，看到身边的师傅都找到了不错的实习岗，觉得是时候去试一试了-一共面了3家-都感觉不错-纠结了很久Orz"><a href="#临近春招，看到身边的师傅都找到了不错的实习岗，觉得是时候去试一试了-一共面了3家-都感觉不错-纠结了很久Orz" class="headerlink" title="临近春招，看到身边的师傅都找到了不错的实习岗，觉得是时候去试一试了,一共面了3家,都感觉不错,纠结了很久Orz"></a>临近春招，看到身边的师傅都找到了不错的实习岗，觉得是时候去试一试了,一共面了3家,都感觉不错,纠结了很久Orz</h2><h2 id="星阑科技"><a href="#星阑科技" class="headerlink" title="星阑科技"></a>星阑科技</h2><h3 id="起初也是看到有师傅在朋友圈里发了星阑的招聘，身边一大堆认识的师傅去了星阑，想试试，是浩歌子师傅在做红队相关的东西-面试是朱师傅和浩子师傅面的我-朱师傅因为之前一起打过比赛，还是比较熟悉-也有点小尴尬-XD"><a href="#起初也是看到有师傅在朋友圈里发了星阑的招聘，身边一大堆认识的师傅去了星阑，想试试，是浩歌子师傅在做红队相关的东西-面试是朱师傅和浩子师傅面的我-朱师傅因为之前一起打过比赛，还是比较熟悉-也有点小尴尬-XD" class="headerlink" title="起初也是看到有师傅在朋友圈里发了星阑的招聘，身边一大堆认识的师傅去了星阑，想试试，是浩歌子师傅在做红队相关的东西,面试是朱师傅和浩子师傅面的我,朱师傅因为之前一起打过比赛，还是比较熟悉,也有点小尴尬,XD"></a>起初也是看到有师傅在朋友圈里发了星阑的招聘，身边一大堆认识的师傅去了星阑，想试试，是浩歌子师傅在做红队相关的东西,面试是朱师傅和浩子师傅面的我,朱师傅因为之前一起打过比赛，还是比较熟悉,也有点小尴尬,XD</h3><h4 id="1-常见的端口-敏感的端口？"><a href="#1-常见的端口-敏感的端口？" class="headerlink" title="1.常见的端口,敏感的端口？"></a>1.常见的端口,敏感的端口？</h4><h4 id="2-sql注入中常见的报错函数？"><a href="#2-sql注入中常见的报错函数？" class="headerlink" title="2.sql注入中常见的报错函数？"></a>2.sql注入中常见的报错函数？</h4><h4 id="3-渗透测试的基本流程？"><a href="#3-渗透测试的基本流程？" class="headerlink" title="3.渗透测试的基本流程？"></a>3.渗透测试的基本流程？</h4><h4 id="4-对于redis数据库你有什么利用手法？"><a href="#4-对于redis数据库你有什么利用手法？" class="headerlink" title="4.对于redis数据库你有什么利用手法？"></a>4.对于redis数据库你有什么利用手法？</h4><h4 id="5-对于csrf，你有深入利用过吗-他的原理是什么？"><a href="#5-对于csrf，你有深入利用过吗-他的原理是什么？" class="headerlink" title="5.对于csrf，你有深入利用过吗?,他的原理是什么？"></a>5.对于csrf，你有深入利用过吗?,他的原理是什么？</h4><h4 id="6-有用过cs吗？对于webshell执行命令或者木马-exe被杀软拦截，有什么bypass方式？"><a href="#6-有用过cs吗？对于webshell执行命令或者木马-exe被杀软拦截，有什么bypass方式？" class="headerlink" title="6.有用过cs吗？对于webshell执行命令或者木马.exe被杀软拦截，有什么bypass方式？"></a>6.有用过cs吗？对于webshell执行命令或者木马.exe被杀软拦截，有什么bypass方式？</h4><h4 id="7-xss的原理-如何将xss的利用成果最大化？"><a href="#7-xss的原理-如何将xss的利用成果最大化？" class="headerlink" title="7.xss的原理?如何将xss的利用成果最大化？"></a>7.xss的原理?如何将xss的利用成果最大化？</h4><h4 id="8-fastjson的某个版本漏洞成因？漏洞的入口点在哪儿？"><a href="#8-fastjson的某个版本漏洞成因？漏洞的入口点在哪儿？" class="headerlink" title="8.fastjson的某个版本漏洞成因？漏洞的入口点在哪儿？"></a>8.fastjson的某个版本漏洞成因？漏洞的入口点在哪儿？</h4><h4 id="9-java反序列化的原理？"><a href="#9-java反序列化的原理？" class="headerlink" title="9.java反序列化的原理？"></a>9.java反序列化的原理？</h4><h2 id="小米科技"><a href="#小米科技" class="headerlink" title="小米科技"></a>小米科技</h2><h4 id="因为有朋友在小米，认识半年了，叫他帮忙推了一下，一面技术面面了2个小时，2个师傅面试我，第一个是启明星辰的老师傅，还有一个是前青藤云的web安全研究员，面试题的质量非常高，问的很深入Orz"><a href="#因为有朋友在小米，认识半年了，叫他帮忙推了一下，一面技术面面了2个小时，2个师傅面试我，第一个是启明星辰的老师傅，还有一个是前青藤云的web安全研究员，面试题的质量非常高，问的很深入Orz" class="headerlink" title="因为有朋友在小米，认识半年了，叫他帮忙推了一下，一面技术面面了2个小时，2个师傅面试我，第一个是启明星辰的老师傅，还有一个是前青藤云的web安全研究员，面试题的质量非常高，问的很深入Orz"></a>因为有朋友在小米，认识半年了，叫他帮忙推了一下，一面技术面面了2个小时，2个师傅面试我，第一个是启明星辰的老师傅，还有一个是前青藤云的web安全研究员，面试题的质量非常高，问的很深入Orz</h4><h3 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h3><h4 id="1-自我介绍"><a href="#1-自我介绍" class="headerlink" title="1.自我介绍"></a>1.自我介绍</h4><h4 id="2-能对渗透测试的流程做一个基本的描述吗？"><a href="#2-能对渗透测试的流程做一个基本的描述吗？" class="headerlink" title="2.能对渗透测试的流程做一个基本的描述吗？"></a>2.能对渗透测试的流程做一个基本的描述吗？</h4><h4 id="3-熟悉什么语言，有过开发经历吗？"><a href="#3-熟悉什么语言，有过开发经历吗？" class="headerlink" title="3.熟悉什么语言，有过开发经历吗？"></a>3.熟悉什么语言，有过开发经历吗？</h4><h4 id="4-自动化挖洞了解过吗？曾经刷过什么漏洞？怎么刷的？"><a href="#4-自动化挖洞了解过吗？曾经刷过什么漏洞？怎么刷的？" class="headerlink" title="4.自动化挖洞了解过吗？曾经刷过什么漏洞？怎么刷的？"></a>4.自动化挖洞了解过吗？曾经刷过什么漏洞？怎么刷的？</h4><h4 id="5-前期信息搜集你是怎么搜集的？"><a href="#5-前期信息搜集你是怎么搜集的？" class="headerlink" title="5.前期信息搜集你是怎么搜集的？"></a>5.前期信息搜集你是怎么搜集的？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里我提到了一个webpack,打包前端用的，有的时候有网站忘记关闭webpack,可能会泄露一些铭感信息</span><br></pre></td></tr></table></figure>
+<h4 id="6-印象深刻的一次漏洞挖掘？"><a href="#6-印象深刻的一次漏洞挖掘？" class="headerlink" title="6.印象深刻的一次漏洞挖掘？"></a>6.印象深刻的一次漏洞挖掘？</h4><h3 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h3><h4 id="1-自我介绍-1"><a href="#1-自我介绍-1" class="headerlink" title="1.自我介绍"></a>1.自我介绍</h4><h4 id="2-能讲一下从浏览器输入-http-www-baidu-com-到回显页面的过程中，经历了哪些协议？"><a href="#2-能讲一下从浏览器输入-http-www-baidu-com-到回显页面的过程中，经历了哪些协议？" class="headerlink" title="2.能讲一下从浏览器输入 http://www.baidu.com 到回显页面的过程中，经历了哪些协议？"></a>2.能讲一下从浏览器输入 <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> 到回显页面的过程中，经历了哪些协议？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS-&gt;TCP/IP-&gt;HTTP</span><br></pre></td></tr></table></figure>
+<h4 id="3-sqlmap的几个参数，http和https网站的注入用sqlmap跑有区别吗？"><a href="#3-sqlmap的几个参数，http和https网站的注入用sqlmap跑有区别吗？" class="headerlink" title="3.sqlmap的几个参数，http和https网站的注入用sqlmap跑有区别吗？"></a>3.sqlmap的几个参数，http和https网站的注入用sqlmap跑有区别吗？</h4><h4 id="4-sqlmap的几个参数，当注入时回显页面状态码为401或者其他状态码时如何与注入成功的页面区分开来？"><a href="#4-sqlmap的几个参数，当注入时回显页面状态码为401或者其他状态码时如何与注入成功的页面区分开来？" class="headerlink" title="4.sqlmap的几个参数，当注入时回显页面状态码为401或者其他状态码时如何与注入成功的页面区分开来？"></a>4.sqlmap的几个参数，当注入时回显页面状态码为401或者其他状态码时如何与注入成功的页面区分开来？</h4><h4 id="5-awvs的一些东西，比如如何防御对于类似awvs的扫描？"><a href="#5-awvs的一些东西，比如如何防御对于类似awvs的扫描？" class="headerlink" title="5.awvs的一些东西，比如如何防御对于类似awvs的扫描？"></a>5.awvs的一些东西，比如如何防御对于类似awvs的扫描？</h4><h4 id="6-awvs能否针对一个服务比如ASP-NET进行扫描？"><a href="#6-awvs能否针对一个服务比如ASP-NET进行扫描？" class="headerlink" title="6.awvs能否针对一个服务比如ASP.NET进行扫描？"></a>6.awvs能否针对一个服务比如ASP.NET进行扫描？</h4><h4 id="7-csrf和ssrf的区别？"><a href="#7-csrf和ssrf的区别？" class="headerlink" title="7.csrf和ssrf的区别？"></a>7.csrf和ssrf的区别？</h4><h4 id="8-ssrf对输入做了ipv4的正则过滤，有什么bypass方式？"><a href="#8-ssrf对输入做了ipv4的正则过滤，有什么bypass方式？" class="headerlink" title="8.ssrf对输入做了ipv4的正则过滤，有什么bypass方式？"></a>8.ssrf对输入做了ipv4的正则过滤，有什么bypass方式？</h4><h4 id="9-基于上题，如果再多加一个对本机ip如127-0-0-1的黑名单，有何绕过手法？"><a href="#9-基于上题，如果再多加一个对本机ip如127-0-0-1的黑名单，有何绕过手法？" class="headerlink" title="9.基于上题，如果再多加一个对本机ip如127.0.0.1的黑名单，有何绕过手法？"></a>9.基于上题，如果再多加一个对本机ip如127.0.0.1的黑名单，有何绕过手法？</h4><h4 id="10-再深入一点-如果基于上题的条件，增加了两个函数，对传进来的域名进行gethostbyname函数处理，然后会对访问的域名进行file-get-contents函数的处理，像这种情况还能绕过吗？"><a href="#10-再深入一点-如果基于上题的条件，增加了两个函数，对传进来的域名进行gethostbyname函数处理，然后会对访问的域名进行file-get-contents函数的处理，像这种情况还能绕过吗？" class="headerlink" title="10.再深入一点,如果基于上题的条件，增加了两个函数，对传进来的域名进行gethostbyname函数处理，然后会对访问的域名进行file_get_contents函数的处理，像这种情况还能绕过吗？"></a>10.再深入一点,如果基于上题的条件，增加了两个函数，对传进来的域名进行gethostbyname函数处理，然后会对访问的域名进行file_get_contents函数的处理，像这种情况还能绕过吗？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">本意是想说一个dns重绑定,我没想到，说了一个302重定向的bypass方式，类似2019湖湘杯的ssrfme</span><br></pre></td></tr></table></figure>
+<h4 id="11-关于xss-一个场景，假如你找到一处接口，他返回的是json格式的信息，你能控制json里的内容并能造成xss，为什么浏览器会把他解析成html代码执行呢？"><a href="#11-关于xss-一个场景，假如你找到一处接口，他返回的是json格式的信息，你能控制json里的内容并能造成xss，为什么浏览器会把他解析成html代码执行呢？" class="headerlink" title="11.关于xss,一个场景，假如你找到一处接口，他返回的是json格式的信息，你能控制json里的内容并能造成xss，为什么浏览器会把他解析成html代码执行呢？"></a>11.关于xss,一个场景，假如你找到一处接口，他返回的是json格式的信息，你能控制json里的内容并能造成xss，为什么浏览器会把他解析成html代码执行呢？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">和Content-Type有关,Content-Type:text/html</span><br></pre></td></tr></table></figure>
+<h4 id="12-一个ip可以有多个站点，服务器是怎么知道我们访问的是哪个站点的？"><a href="#12-一个ip可以有多个站点，服务器是怎么知道我们访问的是哪个站点的？" class="headerlink" title="12.一个ip可以有多个站点，服务器是怎么知道我们访问的是哪个站点的？"></a>12.一个ip可以有多个站点，服务器是怎么知道我们访问的是哪个站点的？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/hosts</span><br></pre></td></tr></table></figure>
+<h2 id="安恒信息"><a href="#安恒信息" class="headerlink" title="安恒信息"></a>安恒信息</h2><h4 id="因为之前和安恒那边有过ctf培训的合作，所以找安恒的小姐姐帮我推了一下杭州安恒的研究院，红队攻防方向的，可能是内推，面试了20分钟左右，有几个问题还是值得分析思考一下。"><a href="#因为之前和安恒那边有过ctf培训的合作，所以找安恒的小姐姐帮我推了一下杭州安恒的研究院，红队攻防方向的，可能是内推，面试了20分钟左右，有几个问题还是值得分析思考一下。" class="headerlink" title="因为之前和安恒那边有过ctf培训的合作，所以找安恒的小姐姐帮我推了一下杭州安恒的研究院，红队攻防方向的，可能是内推，面试了20分钟左右，有几个问题还是值得分析思考一下。"></a>因为之前和安恒那边有过ctf培训的合作，所以找安恒的小姐姐帮我推了一下杭州安恒的研究院，红队攻防方向的，可能是内推，面试了20分钟左右，有几个问题还是值得分析思考一下。</h4><h4 id="1-挖过哪些漏洞，举一个你印象最深的漏洞挖掘经历"><a href="#1-挖过哪些漏洞，举一个你印象最深的漏洞挖掘经历" class="headerlink" title="1.挖过哪些漏洞，举一个你印象最深的漏洞挖掘经历?"></a>1.挖过哪些漏洞，举一个你印象最深的漏洞挖掘经历?</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">常挖逻辑漏洞，比如在登录处重置密码的地方大有文章可做，还有水平越权，垂直越权</span><br><span class="line">重置密码我粗略的讲了几个，例如重置密码的时候向邮箱或手机发送验证码，发送验证码的时候没有做验证识别导致的验证码轰炸</span><br><span class="line">或者是在发送邮箱或手机验证码时会弹出&quot;已向xxxxxxxxxx成功发送验证码&quot;，可存在xss</span><br><span class="line">或者是，是否进入设置新密码页面完全是由前端 js 基于应答状态决定的，直接改回包可直接进入重置验证码页面等等</span><br><span class="line">freebuf的yangyangwithgnu师傅讲的很多，他的文章都很有质量</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.freebuf.com/author/yangyangwithgnu</span><br></pre></td></tr></table></figure>
+<h4 id="2-有过代码审计的经历吗？"><a href="#2-有过代码审计的经历吗？" class="headerlink" title="2.有过代码审计的经历吗？"></a>2.有过代码审计的经历吗？</h4><h4 id="3-看我博客有个Discuz-ML-getshell漏洞分析的文章，内容是空白的，能讲一下漏洞的分析原理吗？"><a href="#3-看我博客有个Discuz-ML-getshell漏洞分析的文章，内容是空白的，能讲一下漏洞的分析原理吗？" class="headerlink" title="3.看我博客有个Discuz ML getshell漏洞分析的文章，内容是空白的，能讲一下漏洞的分析原理吗？"></a>3.看我博客有个Discuz ML getshell漏洞分析的文章，内容是空白的，能讲一下漏洞的分析原理吗？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">去年7月份的漏洞，是由于cookie字段里的lanauage选项过滤不严导致临时模板文件名可操纵，最后include_once包含导致的代码注入</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://mp.weixin.qq.com/s/5Zl3Jve4eblNIXh30t469w</span><br></pre></td></tr></table></figure>
+<h4 id="4-介绍一下有关渗透方向的一些东西"><a href="#4-介绍一下有关渗透方向的一些东西" class="headerlink" title="4.介绍一下有关渗透方向的一些东西"></a>4.介绍一下有关渗透方向的一些东西</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">讲的去年护网由逻辑漏洞到getshell的一次经历</span><br></pre></td></tr></table></figure>
+<h4 id="5-假设你拿到了一台mssql的dbowner权限，怎么获得webshell或者拿到服务器权限？"><a href="#5-假设你拿到了一台mssql的dbowner权限，怎么获得webshell或者拿到服务器权限？" class="headerlink" title="5.假设你拿到了一台mssql的dbowner权限，怎么获得webshell或者拿到服务器权限？"></a>5.假设你拿到了一台mssql的dbowner权限，怎么获得webshell或者拿到服务器权限？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一反应就是如果站库同服务器且知道web服务路径可以试试能不能写一句话，可以用xp_dirtree探测目录，然后用mssql的差异备份getshell</span><br><span class="line">第二反应就是看看是否打开xp_cmdshell(2000版本默认开启,05之后的版本默认关闭)</span><br><span class="line">如果开启可以直接执行系统命令</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://www.cnblogs.com/-qing-/p/10910282.html</span><br><span class="line">https://blog.csdn.net/Fly_hps/article/details/82945179</span><br><span class="line">https://www.freebuf.com/articles/web/55577.html</span><br></pre></td></tr></table></figure>
+<h4 id="6-假如你找到了一处网站mysql数据库root权限的注入，但是这个网站做的站库分离且数据库在内网，是否有办法拿到权限？"><a href="#6-假如你找到了一处网站mysql数据库root权限的注入，但是这个网站做的站库分离且数据库在内网，是否有办法拿到权限？" class="headerlink" title="6.假如你找到了一处网站mysql数据库root权限的注入，但是这个网站做的站库分离且数据库在内网，是否有办法拿到权限？"></a>6.假如你找到了一处网站mysql数据库root权限的注入，但是这个网站做的站库分离且数据库在内网，是否有办法拿到权限？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这个问题当时是懵了，但是第一反应还是写webshell，但是我忘了是站库分离的,网站和数据库只有一个连接的关系，没有什么交互的地方。</span><br><span class="line">只能模模糊糊的说看看数据库里有什么敏感数据，然后如果找到后台的话可以进一步利用后台getshell，</span><br><span class="line">或者如果有第三方mysql的应用如phpmyadmin，可以尝试ssrf探测内网资源</span><br></pre></td></tr></table></figure>
+<h4 id="7-对内网渗透了解过多少？域渗透呢？"><a href="#7-对内网渗透了解过多少？域渗透呢？" class="headerlink" title="7.对内网渗透了解过多少？域渗透呢？"></a>7.对内网渗透了解过多少？域渗透呢？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">内网渗透前不久才做过，用的frp做的内网穿透，socks5做代理连进内网，一些常用的工具如cs,msf，mimitakz屡试不爽</span><br><span class="line">域渗透基本没遇过，对域渗透的了解止步于别的师傅的文章，一些协议如kerberos协议了解过，还有一些攻击方式如票据传递攻击，ipc连接。</span><br><span class="line">大师傅的文章域渗透一般最注重的是思路，对信息的搜集，对服务，端口的探测，以及pth,希望以后能遇到域渗透能多多学习</span><br></pre></td></tr></table></figure>
+<h4 id="8-还有什么想问的？"><a href="#8-还有什么想问的？" class="headerlink" title="8.还有什么想问的？"></a>8.还有什么想问的？</h4><h4 id="最后口头说了一下大概能给一个职务，是负责对1day漏洞进行挖掘和跟进，对复杂网络进行渗透。"><a href="#最后口头说了一下大概能给一个职务，是负责对1day漏洞进行挖掘和跟进，对复杂网络进行渗透。" class="headerlink" title="最后口头说了一下大概能给一个职务，是负责对1day漏洞进行挖掘和跟进，对复杂网络进行渗透。"></a>最后口头说了一下大概能给一个职务，是负责对1day漏洞进行挖掘和跟进，对复杂网络进行渗透。</h4>
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/04/13/菠萝的19年终总结/" title="菠萝的19年终总结">
+                    <div class="nextTitle">菠萝的19年终总结</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/09/28/一些面试题目总结/" title="一些面试题目总结">
+                    <div class="prevTitle">一些面试题目总结</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:3063446048@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/b1cx" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#临近春招，看到身边的师傅都找到了不错的实习岗，觉得是时候去试一试了-一共面了3家-都感觉不错-纠结了很久Orz"><span class="toc-number">1.</span> <span class="toc-text">临近春招，看到身边的师傅都找到了不错的实习岗，觉得是时候去试一试了,一共面了3家,都感觉不错,纠结了很久Orz</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#星阑科技"><span class="toc-number">2.</span> <span class="toc-text">星阑科技</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#起初也是看到有师傅在朋友圈里发了星阑的招聘，身边一大堆认识的师傅去了星阑，想试试，是浩歌子师傅在做红队相关的东西-面试是朱师傅和浩子师傅面的我-朱师傅因为之前一起打过比赛，还是比较熟悉-也有点小尴尬-XD"><span class="toc-number">2.1.</span> <span class="toc-text">起初也是看到有师傅在朋友圈里发了星阑的招聘，身边一大堆认识的师傅去了星阑，想试试，是浩歌子师傅在做红队相关的东西,面试是朱师傅和浩子师傅面的我,朱师傅因为之前一起打过比赛，还是比较熟悉,也有点小尴尬,XD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-常见的端口-敏感的端口？"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.常见的端口,敏感的端口？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-sql注入中常见的报错函数？"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.sql注入中常见的报错函数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-渗透测试的基本流程？"><span class="toc-number">2.1.3.</span> <span class="toc-text">3.渗透测试的基本流程？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-对于redis数据库你有什么利用手法？"><span class="toc-number">2.1.4.</span> <span class="toc-text">4.对于redis数据库你有什么利用手法？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-对于csrf，你有深入利用过吗-他的原理是什么？"><span class="toc-number">2.1.5.</span> <span class="toc-text">5.对于csrf，你有深入利用过吗?,他的原理是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-有用过cs吗？对于webshell执行命令或者木马-exe被杀软拦截，有什么bypass方式？"><span class="toc-number">2.1.6.</span> <span class="toc-text">6.有用过cs吗？对于webshell执行命令或者木马.exe被杀软拦截，有什么bypass方式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-xss的原理-如何将xss的利用成果最大化？"><span class="toc-number">2.1.7.</span> <span class="toc-text">7.xss的原理?如何将xss的利用成果最大化？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-fastjson的某个版本漏洞成因？漏洞的入口点在哪儿？"><span class="toc-number">2.1.8.</span> <span class="toc-text">8.fastjson的某个版本漏洞成因？漏洞的入口点在哪儿？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-java反序列化的原理？"><span class="toc-number">2.1.9.</span> <span class="toc-text">9.java反序列化的原理？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小米科技"><span class="toc-number">3.</span> <span class="toc-text">小米科技</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#因为有朋友在小米，认识半年了，叫他帮忙推了一下，一面技术面面了2个小时，2个师傅面试我，第一个是启明星辰的老师傅，还有一个是前青藤云的web安全研究员，面试题的质量非常高，问的很深入Orz"><span class="toc-number">3.0.1.</span> <span class="toc-text">因为有朋友在小米，认识半年了，叫他帮忙推了一下，一面技术面面了2个小时，2个师傅面试我，第一个是启明星辰的老师傅，还有一个是前青藤云的web安全研究员，面试题的质量非常高，问的很深入Orz</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一面"><span class="toc-number">3.1.</span> <span class="toc-text">一面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-自我介绍"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.自我介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-能对渗透测试的流程做一个基本的描述吗？"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.能对渗透测试的流程做一个基本的描述吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-熟悉什么语言，有过开发经历吗？"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.熟悉什么语言，有过开发经历吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-自动化挖洞了解过吗？曾经刷过什么漏洞？怎么刷的？"><span class="toc-number">3.1.4.</span> <span class="toc-text">4.自动化挖洞了解过吗？曾经刷过什么漏洞？怎么刷的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-前期信息搜集你是怎么搜集的？"><span class="toc-number">3.1.5.</span> <span class="toc-text">5.前期信息搜集你是怎么搜集的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-印象深刻的一次漏洞挖掘？"><span class="toc-number">3.1.6.</span> <span class="toc-text">6.印象深刻的一次漏洞挖掘？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二面"><span class="toc-number">3.2.</span> <span class="toc-text">二面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-自我介绍-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">1.自我介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-能讲一下从浏览器输入-http-www-baidu-com-到回显页面的过程中，经历了哪些协议？"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.能讲一下从浏览器输入 http://www.baidu.com 到回显页面的过程中，经历了哪些协议？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-sqlmap的几个参数，http和https网站的注入用sqlmap跑有区别吗？"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.sqlmap的几个参数，http和https网站的注入用sqlmap跑有区别吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-sqlmap的几个参数，当注入时回显页面状态码为401或者其他状态码时如何与注入成功的页面区分开来？"><span class="toc-number">3.2.4.</span> <span class="toc-text">4.sqlmap的几个参数，当注入时回显页面状态码为401或者其他状态码时如何与注入成功的页面区分开来？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-awvs的一些东西，比如如何防御对于类似awvs的扫描？"><span class="toc-number">3.2.5.</span> <span class="toc-text">5.awvs的一些东西，比如如何防御对于类似awvs的扫描？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-awvs能否针对一个服务比如ASP-NET进行扫描？"><span class="toc-number">3.2.6.</span> <span class="toc-text">6.awvs能否针对一个服务比如ASP.NET进行扫描？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-csrf和ssrf的区别？"><span class="toc-number">3.2.7.</span> <span class="toc-text">7.csrf和ssrf的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-ssrf对输入做了ipv4的正则过滤，有什么bypass方式？"><span class="toc-number">3.2.8.</span> <span class="toc-text">8.ssrf对输入做了ipv4的正则过滤，有什么bypass方式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-基于上题，如果再多加一个对本机ip如127-0-0-1的黑名单，有何绕过手法？"><span class="toc-number">3.2.9.</span> <span class="toc-text">9.基于上题，如果再多加一个对本机ip如127.0.0.1的黑名单，有何绕过手法？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-再深入一点-如果基于上题的条件，增加了两个函数，对传进来的域名进行gethostbyname函数处理，然后会对访问的域名进行file-get-contents函数的处理，像这种情况还能绕过吗？"><span class="toc-number">3.2.10.</span> <span class="toc-text">10.再深入一点,如果基于上题的条件，增加了两个函数，对传进来的域名进行gethostbyname函数处理，然后会对访问的域名进行file_get_contents函数的处理，像这种情况还能绕过吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-关于xss-一个场景，假如你找到一处接口，他返回的是json格式的信息，你能控制json里的内容并能造成xss，为什么浏览器会把他解析成html代码执行呢？"><span class="toc-number">3.2.11.</span> <span class="toc-text">11.关于xss,一个场景，假如你找到一处接口，他返回的是json格式的信息，你能控制json里的内容并能造成xss，为什么浏览器会把他解析成html代码执行呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-一个ip可以有多个站点，服务器是怎么知道我们访问的是哪个站点的？"><span class="toc-number">3.2.12.</span> <span class="toc-text">12.一个ip可以有多个站点，服务器是怎么知道我们访问的是哪个站点的？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安恒信息"><span class="toc-number">4.</span> <span class="toc-text">安恒信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#因为之前和安恒那边有过ctf培训的合作，所以找安恒的小姐姐帮我推了一下杭州安恒的研究院，红队攻防方向的，可能是内推，面试了20分钟左右，有几个问题还是值得分析思考一下。"><span class="toc-number">4.0.1.</span> <span class="toc-text">因为之前和安恒那边有过ctf培训的合作，所以找安恒的小姐姐帮我推了一下杭州安恒的研究院，红队攻防方向的，可能是内推，面试了20分钟左右，有几个问题还是值得分析思考一下。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-挖过哪些漏洞，举一个你印象最深的漏洞挖掘经历"><span class="toc-number">4.0.2.</span> <span class="toc-text">1.挖过哪些漏洞，举一个你印象最深的漏洞挖掘经历?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-有过代码审计的经历吗？"><span class="toc-number">4.0.3.</span> <span class="toc-text">2.有过代码审计的经历吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-看我博客有个Discuz-ML-getshell漏洞分析的文章，内容是空白的，能讲一下漏洞的分析原理吗？"><span class="toc-number">4.0.4.</span> <span class="toc-text">3.看我博客有个Discuz ML getshell漏洞分析的文章，内容是空白的，能讲一下漏洞的分析原理吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-介绍一下有关渗透方向的一些东西"><span class="toc-number">4.0.5.</span> <span class="toc-text">4.介绍一下有关渗透方向的一些东西</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-假设你拿到了一台mssql的dbowner权限，怎么获得webshell或者拿到服务器权限？"><span class="toc-number">4.0.6.</span> <span class="toc-text">5.假设你拿到了一台mssql的dbowner权限，怎么获得webshell或者拿到服务器权限？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-假如你找到了一处网站mysql数据库root权限的注入，但是这个网站做的站库分离且数据库在内网，是否有办法拿到权限？"><span class="toc-number">4.0.7.</span> <span class="toc-text">6.假如你找到了一处网站mysql数据库root权限的注入，但是这个网站做的站库分离且数据库在内网，是否有办法拿到权限？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-对内网渗透了解过多少？域渗透呢？"><span class="toc-number">4.0.8.</span> <span class="toc-text">7.对内网渗透了解过多少？域渗透呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-还有什么想问的？"><span class="toc-number">4.0.9.</span> <span class="toc-text">8.还有什么想问的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最后口头说了一下大概能给一个职务，是负责对1day漏洞进行挖掘和跟进，对复杂网络进行渗透。"><span class="toc-number">4.0.10.</span> <span class="toc-text">最后口头说了一下大概能给一个职务，是负责对1day漏洞进行挖掘和跟进，对复杂网络进行渗透。</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 17
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2020/05/22/0ctf-tctf2019-misc-perf-data解题记录/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2020/05/22/2019DDCTF部分wp/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/03/17/2019国赛华东北赛区day1两道web/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/03/17/svg xss的理解/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href="/2020/04/20/hfctf-取证misc/">hfctf 取证misc</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span><a class="archive-post-title" href="/2020/04/13/菠萝的19年终总结/">菠萝的19年终总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href="/2020/03/27/一些甲方和乙方的面经/">一些甲方和乙方的面经</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href="/2019/09/28/一些面试题目总结/">一些面试题目总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/Discuz-ml-rce-分析/">Discuz ml rce 分析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/08/rce无回显的一种办法/">rce无回显的一种办法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/10</span><a class="archive-post-title" href="/2019/04/10/关于RPO攻击的一些东西/">关于RPO攻击的一些东西</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href="/2019/03/21/~$de-breaking-pcrewaf/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/tp6.0任意文件操作漏洞/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/xsss挑战笔记/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/记对Confidence-ctf-2019-My-admin-panel的一次思考/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/2019/03/16/记PHP里一些危险的函数/">记PHP命令注入函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/2019/03/14/xss总结/">xss总结</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="misc"><span class="iconfont-archer">&#xe606;</span>misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="ctf"><span class="iconfont-archer">&#xe606;</span>ctf</span>
+    
+        <span class="sidebar-tag-name" data-tags="备忘录"><span class="iconfont-archer">&#xe606;</span>备忘录</span>
+    
+        <span class="sidebar-tag-name" data-tags="life"><span class="iconfont-archer">&#xe606;</span>life</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: ""
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+

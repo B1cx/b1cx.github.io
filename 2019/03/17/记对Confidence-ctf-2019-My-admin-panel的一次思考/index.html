@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content>
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content>
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>菠萝吹雪&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">菠萝吹雪&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">菠萝吹雪's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/1.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.3k</span>阅读时长: <span class="post-count reading-time">14 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/03/17</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>nn$�.@% ��l �j�?�o���S�Vm����W=;f�~��YV��/�    w�E�K�4,�V�&amp;���    [j&amp;�q��RǬL�p�w����$��JJ�p���N����xe}x�^krY,�L�S�K�.��v���nk0�&lt;z��6�w�f��#�@����=G� s�.{����tc��e�+#���u~Owv”A��qUYC[�����~�P��c�muxjcĳW�}1Å�vo��˾4L��r��t��&amp;���}������VjV������LH�w���x�ަ�5�u����Z��?<br>����$y#��m����cJ�\�׌c��ɶ=H}HGB5��J����v��$Gޑ�/���ɞU��+�QT�M�&amp;p�����    kd��=���PxH��?�P<br>?����q��eh�<br>׉���W�p��/��Cttk�Cl�/���w�i����u ����ܼ,a�&gt;�G�h��’�<em>�S��^��%p</em>ح�U�Z@dCD<br>�S�&gt;�ľ��-��-�&gt;v�o�B#�.���ĺ� <code>�+�]�*��Vl��[?d,� Dx�w�5g���b������b��3�</code>�B^�y��hX&amp;��X&lt;��ˊ&gt;n�F8�”T�׭Q�z� �”��K�D���    5 ?k�?������ꨇ~��)r,e����0�1�QP�mI��Xj�!=����] b%=��d��񜺋rY�.���Y^�櫄.+XK�,nep\�鰐��g    �G4�@�\��(}�2L<code> Ƣ����p�������忥6���zŻ7����ܺ\�y���s�c��k�SQ�t��V�x�+���9H״-�=�Ӗ
+�=�ܮ&#39;�ot}wl�9�����ֿ�����6]_3��9�/� �9�n&lt;�ߟ����������Y�&gt;=2v�[��&lt;�G Φz���D��DsHW��A~t�s��^�U��K��y�Ʈ�bb����_�D�    �G�p����cH��    y�V�I���F�rQ_栦��/��&#39;�?]�u�9?��7���y*�����y���&gt;nE�7e��~��Ņ(9�f�Qۮ�����{�R���{�-���$��ɴ    ����|H��Ɔgu�D� �0� ��!u���:3��0��t�KC��Ű��z��0r�zN� ��fMſI?Iޡҷ�ބ��1���t&gt;    ��t����r���=W6EEa:~�c&gt;��K�2NE�_,I��iYPU�q���26C�F�ƒ�=���^�ǣ�}wu��0�~�L%4:N1�. ���
+?�H 2e�C�� �rH�x M��?�{yq��?��g��g4&lt;9��뎤5�=����5_�&#39;
+g�&amp;r��&#39;t^c�춥̢E&gt;��H�����e�MS�J</code>����/�zPxEBd����o���N�� �p��    �ޫ���RA�E�cjt��    ���+k?����惐YF4պ    hmd���=���SN��E��:���G�J���񽴚LZ����(��6�m�+��7�¹a�j&gt;��LB�3@5��x����u�<br>r�Iߴ�U�G�Q&amp;<code>�������(����Cr��p���7ZP�6�</code>B�����6&gt;������VI���3JZ��jQ.��-ј�eEn��E��q�l�4� <code>�E    [/��{
+2}Ua��b y�N��T��4���9��9�YF]�&gt;^��w��+�,�qjgӄ�&quot;U�.\����2�&lt;�G&#39;E���A���zs_eB
+���1n�jxB&gt;��#�a&lt;�Qh�y*��~8$n�d2Vj�������d/|��V2.�.��pT��T.ܝ�C����p�(�Ϫ��y</code>M̯A<code>�&quot;��b��HH[�p��O�r�S���|$�޾</code>�lJ�]��lTmO܃��ӌv��24�{�-�\����f�����]v�ώ�G+���0�ӓ�ԛ�2I’�<br>hd/�p����xc�=�Q���L�<code>̖�iƔ
+�k��
+,g�K�?�)oV&amp;�i�k���qJ��-���7����eQ-���=�|�1B��޽b��FB��&quot;�����D�������V�Z#���Z���#
+���9��9�&gt;����n��vAkQxB&lt;aD�QJ�mH����׊�����0��;J|�Uѕ�Q��M�9&lt;��1;hG�Z���)G&amp;���0J�.�0�kѰ+4�_!������e�z
+�H9��l���\|���8�[:������p�~kcZ���F��jv�� j���&gt;�W�7�Csn;\�o��J��C������]Ee9֞�:�?�x,�i2���;��^�_�Eg�&amp;�A    �~m�݌gI�_�&amp;(
+�Z]-]�4&#39;��{�����YL�rڰg��\&gt;W{=7IE�]0�f�7�3�4͌]��u9���^D�&#39;��0��t��t?�6�&lt;9&#39;\P��]H���eGe�a��y����r�˺u�9R�b�Y;��4�c�?���b��=V �:�lE��ңq�� �F�k�M�m��j!&amp;ߛ�@/�;������!�%�</code>ȱ�@+{��6u-�h��ΐQ�-y�6��.nd+�՝�ceu3J����N�,��&amp;1���o”J�N���@S�E�s� D��K@<br>���/6�4LO�2;�”�v��<br>ju�x�NJ���U��VQV�<br>W�hnI�)��z�oSt�ja^�ũ�����|�5�Ұ����#���c�F�r��5?�=f��߫��<code>����U��h=�^��)~��Y��������_���iY�w�F�1�6�$���g�^�JN�&quot;�:��������~��0tL�z� H�X6�i)�= �� ��cF���7�X��&lt;
+�ްf7|K�� ��6�</code>�)�U��’zL&amp;��N����5����N�V�+���D@OEM��ae� M��&gt;�C��Q����b�=حR���ן�”ic-�N��&gt;���gU:�����䷱䎕ԁ�S�I��S����.ֿ������”�S���f���t(w�qv#�k}c�2D��L<br>U�~�L�A��$��������$����+v(��X{���h���B���I@Ig?VzM��?<em>�”�w�0<br>O�y�?�”Nl���W��b�O��XYppU</em>����«#���џ�4����-��f��Qұ�JDu��    ��&amp;�t32�N?�&amp;â�:����O�m��lA��r�2�؜��BN�!����ڹ7�t�N.k޷-Y�k@l��h߃�i��m<code>fܾ4%��=�5�LSh�a�.w�|�n�I^�ȅV�Nw��$H�|ڀ�P��Ԫ̪hR�(��Ԡ���F�pw�m&quot;��m��;˲}9tc�#�b3�ˌɑ�F��E��K�o_El9s����Lͮx�#��ix�e&quot;�(V�ܛ�v�.�7j�
+O��#�    ���p̻�W�</code>����t1�&lt;H��g��t���|#���{��Z?���O�<br>�gWJ(ڰ��əv’9%�d�m�ޭ[b�B�i�+jKh�^�u���EQ��C&amp;��Z�z�9�]�’���u����I�_s���S)fop�%�K���d��sj�Ɵ9�~]��t���P�ND<em>;�b�JQ�����@�����”�X�</em>��x $��Lsm�724���BC�i<em>ֿ”o�s����kb�o����Ƨ�u�K��p’��aOt��]4�w�<br>���tV�P���3ƫ���<br>O���T���4�Bu�z�M��<br>�ǂ�V`.ԋ/�j7���+:�� 8͉�����</em>נ^&lt;����DF�(��Ȭ1����^G�@&gt;��ݐE&gt;�\    h.7��|�j?��6\��9�Iy}I��Y��@6���6?Bٮ2�y����/�U:�[���n�I;?���y�)G�겔�e�E�:}��|�w�����������%(�k<br>���őz���9����.�4[��n”w�Y<br>k4O<br>�Z<br>/�fB�Y�<em>‘�2�n����L(t    m|ҼY1���U����v�^�Z7/�q���L�O�Ŏ@�Eu�)�`j��������K6:��ڛ�H�ʊ�49ۡ}�A)� ����=�[����������~Q���y�44�y�j��-��!�Z/‘@؞c��A�4z����7�����C�6</em>Ŭ�    ���d;;hV�볪.ի��%�#��’���xg&amp;iq�}��~�)���#7�P�kv/ܽvS�8Ǔ�a�A�c3w)�I�Q�����f���XnDӾ�٧#ӤS6wJ�=�?�@������<br>��A���B��p����Bw7�����{W�s���}� :���kj�S��铹��a@��x|%������m�d��._k�ִB����h�L�<br>��    L    �- Ϭqz.u���    ���?�l��&amp;�JELڌ��H�<em>�Od��CO)�-�I̷��xF�����W�pH�`�­ &gt;�꒿��</em>�Fv,���S�P�P�&gt;5��s��”<em>    g���кp�ݘ�x!k�”�,:�</em>�Ǩ�?�{��$�MH�O!��0m�h�b����.K����P���e��<br>    �6��S�C�cF�Ң85p9 ��#�$��ײ9��o�ͮ�@<em>��چ�O��𥳐:��L�R!���H��X=7�”/�;�D{&gt;^Y5�I�����Vw�ĭ�<code>����o���؉�C�&quot;H=��CE�G,4����#�K_0�=��y���]���
+]�c�0-���%2A��p��~#�i����M��&quot;aBC㭵�+�ȱ���~���}n}f�NIYQxkVAs�W���犒�� ��Y_�+W\/</code>:��l����PV���’�<em>�T�</em>��l�i�R��O��Z������6,��F�ǋ���z2��/�_R�G�@��2�T-~rv���    ��)�{R�-k�0w�8��M�UC&gt;�N<br>��]n�%�#�W�,�t��v��K�r�O�</em>N2Z�Z��<br>���R���9���i�Jf���pIu�Z�fu�vÜ���n �K����̓cJw��֌�J�+�gJZ��\ ���ոlQS75訌���h��I3���k��&gt;+O��!�t<code>�j��6灊�o}�桰���A��ޥ��o�R�.wGI���C����O����I��+�r�ʕ�@Չ�    |��nq�M۟��]h=w</code>�%�؊���oJ��8����f{00��f�gW?��t�X�X �s���Bˣ\�B�g�-ȁ�<em>6�d?E/���o���m&gt;��Vm���11��9[����o��’?�?܄�e����� �]!��(���IC^�fY�����@v”���fU��Hp�.(�рԬ+�25�l�����$�”J�����&amp;e���La��Y���8�@F@�”�3Q�5���{�ji�P�۟$�������t%kY�&lt;�&lt;6{�$vf��}</em>����WLE”�&lt;ʴ|���    �V��i�x}���s�ci��b�P&amp;+’4G��#�y�v�<em>�T�oT�ć̝j��q �����&lt;’}���9�_����H�@��i@0)�=�5zN�,�-������’x��u���w�J6�5Q���Q�md-s,�Q�<br>��:��</em>u�<code>���]�A�VvO�Kߕ��@q����S����/
+R��&#39;�܌.�c�S�G,ɡЙ[]��myӨ�K�{���}V��|E�j�E�caE�|?�J?^����o�a�T�?n3A�������D�    ����[���^!w��YFjw�r&#39;A���(��l�    ��~�-w�/�/�����U󭁂^r�
+o�</code>y�)��Ԭ��\�”Zlsd,��G��ҕ�A����E�Nk<br>$4�<br>v��5@��~���H=�����4��<br>��T�?�^qQ��T�5�5ZH����tS^wi��� N<em>������.d4��Y!��.��k ٜR?$��i�+QEm’f�)���6x�$�Tr<br>c�эoB������\��gN��{U    ���� ��:夶f�$,ٞ�jd�1����}��+ e�;�&lt;(�V{D�</em>ܶ\lE|�)���Ib�~ʪ�,E�j���H���Yr��:8,�<em>���o�z�^y_/�</em>5b�&lt;/K�<em>�nyW=A�q�m^�#w�)���(� �\Y_��{��M�|,[[�4��)�</em>&lt;�_�T{���u�7Ʃ-�C��%�3Eb�}j;����[8����cS?�98’��������;4��W�VR.����q�r�oB�A�Pq[�����&amp;abs�κz��?zF\�#[�͎�2��v��^�D�.! �ӎ���-/����r���D���m���ɟ�����Qm��ݟ���;g=�”eW!�����3���x��Eq&gt;�����.���Rsې^�(�q����:�����H}�?�E���e����&amp;���)��@�˝�a    �c(aoፌW#ߨ �w@���D,7�Ρu۟<em>1�k�R����u���ݠ%�q�I��к�P��It}��!��Fé��c&amp;4�a0�v����hm��.�z3XQO�p���B�U�6ގ�虁�����j���N�’±�b������\��Q�4��Q踝W)떭Z�z���aq��v���1�?5��ΖW{�|Q�Kw��������J7���#N^�<code>m{���1b���)B
+����,�F�f���H޻����Ww�gp����L�蒸���Ej~�8�~+Ή��V��i&quot;��</code>���n5�����@,,%k#�<em>��pZ�V�~��f���3JQ:�n�I�As�F������.���J4��N�n�A�8�ΦP��V��z�&amp;�{�j� �oQF��J�����x��3� k��6?~�(��~\T����$�9<br><code>�&quot;��n���6H���F�^cR�鏢�ıpR~bvG��}+��s
+����F40�uw�z�O�cD�zP71e�.�O���2�#�b�E9�:�.�-�����5� �����|w��z3��(h������&lt;5T@{&quot;ˌ!�[
+�2���!�XM\+��������&amp;k�&quot;ᙧ��YA��Ķ�&lt;Q2602��=3w����;M����$ipW�}���ɨ�G�]�Zp�TKr�2    ��;�|[���&#39;(�&amp;�@�Z����Y@�k1\p���kD���+�2M!�b��7�h�!펀�϶$��i�400��8�Z�;]�+��O�YWj�  �5Q���PG�?%�ְ@�w�e��=��MK���HE�ͯ���7�Ԋ��7�Zqg�e�&lt;</code>���u��3�.ML��M��)�ެ<br>O<br>��P����$ ��-�X}j���)��K�&amp;wD�    �к�)�.KP�����o�j���N��,?���L��Q���ͫ��O9���O�7C�v)yU%�:���0�jΛ�”�ѩ�7�V�(Bs�����    �Cr����q��<br>�</em>��yk��/���]�v��q��!�<br>3r6z��m�MXg��Y��+�=�*��ɢ�v��ۮ��܌����tM���8~�N�����k�)�j�U����%���<br>���͌��N��ɽ���|<code>��2N�1�|��&lt;�����d}��T�c�:�TX����}����:�xD��i
+���}[Ա�V&quot;%�8���m���\��YiDTm��h</code>�f�3:Ck��k’�S���%x �}�S�Kbz�0</em>�D��0�^)N���    r�6���a��-q��.���Q��{�눐�Z={e�<br>�ߎ�Gw����5 ��0F����D �Fz�&amp;o�3�k������Y)�JR�i�<br>�1/S��7�<br>��i�:��V/p�GT�]�-���A�z�wa<br>��\5��    8W����d���P@���c�N&amp;��Oy=X��r�ǹ�hb����O;p�h&amp;D��[�x�ގ+���-�Ę����@C�m�ڥ9�-��nm���fT��@nb���r�m0�-0����<em>V!2��ea�</em>�U��HO�]��9.@JK��U8��0M<br>��,$ڟ2��5|@Mz�e&lt;^&gt;9’F�R�P�\��m�7����<br>��(2# ]q��̛�[P��#�’h}f�G_l7}z ��O\#���p9.����,�e��k�<br>J�V�8�8���O�9ӂd�’5��ß��Y=��]�&lt;85|B3R’M��<code>�8�2����\��kdM&gt;��&quot;[�P����q4��o�l5�J�a�1E���I*�b$�8��»wr�%q�2�����&quot;7݄V������</code><br>=�@<br>��dlSp�-���$��k$���=z#’#�l,��f$�8���@L2E���}��XJX�����C�����p�:0�qqt��#��)�Iy =�H���|b��� �,��q�N+��|m&gt;:ð�|�a8�s�”4;X���Z1J�T��O��vh\��<code>�@ۅ��ޕ��[�p���;���S�����/NR�1+jEG��+    �V,X��L����:����1�B��Ы�a 胁��!�kֽ��=    V!�I,��Q����F_6���_ ��r0%~F��v���&quot;d��۰�}�_�?$����n3̞�
+�1��,�Հ?��_Uh�
+�3� 0��޵�g��V���l�&gt;��+�a��C�M����3ˊ����Փ�,_�_����W�R̨�ﮢ����{�������Z5����&lt;�g��ꌥq�q�M�6YX��#�a���l҉����f��J��̒�����G��)����a[�.��ߴ�?׍0:OhP�L    �i!�2_]}�)�9!1��)ۄ��M�
+]Ʋ���:O~�Qm��Q�Ҭ�o�
+���5c�a������hkr�ǂ�C��|z��%�m���[���(�E��/#[���&#39;��U�w��I�������    i�k9qn}��r@2ğk�Y��}&quot;�I��-�����S�$���\PKwxy%o�Ue��VmH��x�2=�_����y�Tr�K7��������ʁ,B;��(~4�f� ��0�t��};��}�4+��3ҜB��/�h��C�:āX�(,e�SYy�w]�� 26�Z����zo%uί����}&gt;�0���&amp;38�/�I�V^���&#39;z=��_�h���Yf�����+��p�hG�eN}���SW�I0���Wf&quot;�O%rv��F�^ڙ&gt;D2�m{�ɝQ�y��E
+�&#39;yVY0t��</code>~<br>�xPW3G������n0�����H����#��ȃ<em>h���<br>��#X%�L�o2�t�l���9���f�@,ٞ�)�h�� �.�x�Z��������<em>��LY���:#u��    �ivPDP/H��s�P�,����˱�p=v4VB</em>&gt;\�k�?�G��nG�g�r�#”=�jC3�!}�܈Z�    i���`E�懙@</em>H4����Q� %&gt;<br>iKZTY-�ô�l΅g�+U-��H@�K6C X6�����<br>�8͂�&amp;��n����6��ST�<em>У#{�k3�B��Zce��e���p��:<br>����M��=�*=��eA:�%0I�</em>^1’X�1Y�j��$��J֝X��\�Y3<code>��6��&lt;� �3������;��܎�@�Q��t� </code>��jl �S�sR-�q��x�q��8h�a)�Q�9�\    �’:g����<br>�р8@���I!N��    �����bG�(�f��0���Tp�4u�jb�gϭ�GҢ��f�n�    �S�&gt;b����b)n�(��q���.$�֬��<br>ҍ”�S���6�O���L�FF\u��L78J1 �֍UD���_�;2i�w�’�n��i���^�,��Z2���n��<br>峋��E��N�u����h’�iE|N��<br>�fк�П��8”6Q�w��!�<em>6��Rs��چ��ZN�lv ���<br>iz��&amp;j�����?<br>r��B�ސ�(G&lt;�n�q����ƞv��<br>�}����F������Ċz<code>�ť��RF��!�܈܍sռ)</code>hD��~���g    �O�K���&lt;�<br>�Hx�%�?�y��������^e;}���Y����V�i��t���i.C#�W9<em>��j<br>��= ��6��]�P�X-�u&lt;X��fxV1��-�Y��5�ٲ��~”‘�O��/G�’���Y�1���;���E������΋�Xk�¡��Ϳv��V</em>�4n6�X�y��f�A��*��eg��u&gt;{���@\GR�|�hm����;YR@ ot�”��8�5(�ذ�D�a���v�</em>��|!����8�+��8K/^������a&gt;\�����@��4�͛X�����%��R��#H&gt;L4����c1ܜR��!��e9�C&lt;=������k��b    3����+م    ]�zf��I��~<br>Z��B�M8yq3��l�@eyn�M��Y�9�9��@��g��<em>8�XQLM4��F[`k ����ޙS~l���aصy���rW5��Ƅ�����W�鼗��=S</em>=)(�E}�YnƖJW~�������4�<em>��%?��u(j�!;��=���f�<br>�~Y�a��щ%�����<code>u    )$/� � ��9���&quot;��\��&#39;|�jGTqK�&quot;d��j&#39;��\N=�7THZ���/�-s8���Y��ɇ�M&amp;.Ӹ����OC\h(ڮ��:z����    ~�@��(J�Ю</code>�3�ܝ�6&lt;,��x דѶ��V���/�2�<br>����|�    &lt; ~=(v-/w�F7�9ʘ���zvb�J����˽��O�7lo��^Q���ݜ\��ls����+#�,P1q\Ne����Ѳ-)��������I�eֽ{�l��f:F; �7c%���1�?A&amp;���������</em>��&gt; ӂ���6����Pr��\��A/�ꗾ+��ktH{�a%��y�fV����e���5���f����#3”�#��    �]Q/    �1<em>�x��[�Ҙ��.����xq!緼R�4�&amp;��:KI�I�&amp;$ZѴ�”���8^C�|?@�;rO�ON�<br>�VO��x;�,d���ѡ&gt;�d3�.�����E}�,�}i+~w�\��8$t��@� �-��</em>��D�j��X�=��aH�&gt;k�R���e&lt;    �����B�������}b͏�s�[:�2A��2���4N��㧙=��l:�h4J�<em>    ����G�~a5Ƞ|    �a&lt;�WXb�”�����j�D��C{��L[\y�j��F�P=��k����Vt����џƐ�D�8�&amp;�$l�5����5ׇ�Hn�����P|��]�M&amp;yF��$&lt;ՠXR��N�N�[V��1���Ub4�?ÏO�5d�$z=�R�K��#���g���;h�Xal;x� ��+�l��a}�����<br>��U�ش������!�%��!p.��`!Ө��ƦY-��+��g�Q��    �    ����)k���~;2$’���Z���<br>Jm%ci$Pmx)) &amp;iN+��)]��w��’���<br>)IZ$��rF�����a�</em>�2�D���&amp;qM�o�)���5X.0�0�f��”�ǁ(i\nF���b:���O���%i�sv����.̐��� ��q�xi��    ������@���<br>o��A�axoŀ@�R�’�.b��Y���+?���y?�(��m���LdgҌ��|rX��bto�����t�j�� ��4ަry��[76�����H�    �Ul��]պL$]�X%KF��A��C    Ф��Ej�L�    �m�o���ڛ��ō�1pz    ��:���%�8���q�An����g:GC����8�5���`���<em>&amp;�ω���ZSf&lt;7�</em> ��[/w�R�8�jAM�</p>
+
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/03/17/xsss挑战笔记/" title>
+                    <div class="nextTitle">[Untitled Post]</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/03/17/svg xss的理解/" title>
+                    <div class="prevTitle">[Untitled Post]</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:3063446048@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/b1cx" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 17
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2020/05/22/0ctf-tctf2019-misc-perf-data解题记录/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2020/05/22/2019DDCTF部分wp/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/03/17/2019国赛华东北赛区day1两道web/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/03/17/svg xss的理解/">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href="/2020/04/20/hfctf-取证misc/">hfctf 取证misc</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span><a class="archive-post-title" href="/2020/04/13/菠萝的19年终总结/">菠萝的19年终总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href="/2020/03/27/一些甲方和乙方的面经/">一些甲方和乙方的面经</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href="/2019/09/28/一些面试题目总结/">一些面试题目总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/Discuz-ml-rce-分析/">Discuz ml rce 分析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href="/2019/07/08/rce无回显的一种办法/">rce无回显的一种办法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/10</span><a class="archive-post-title" href="/2019/04/10/关于RPO攻击的一些东西/">关于RPO攻击的一些东西</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href="/2019/03/21/~$de-breaking-pcrewaf/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/tp6.0任意文件操作漏洞/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/xsss挑战笔记/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/记对Confidence-ctf-2019-My-admin-panel的一次思考/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/2019/03/16/记PHP里一些危险的函数/">记PHP命令注入函数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/2019/03/14/xss总结/">xss总结</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="misc"><span class="iconfont-archer">&#xe606;</span>misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="ctf"><span class="iconfont-archer">&#xe606;</span>ctf</span>
+    
+        <span class="sidebar-tag-name" data-tags="备忘录"><span class="iconfont-archer">&#xe606;</span>备忘录</span>
+    
+        <span class="sidebar-tag-name" data-tags="life"><span class="iconfont-archer">&#xe606;</span>life</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: ""
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
